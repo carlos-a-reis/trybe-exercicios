@@ -1,0 +1,36 @@
+h1 {
+    color: orange;
+    font-size: 65px;
+    font-family: sans-serif;
+}
+ul{
+    background-color: blueviolet;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: overline;
+}
+.quest-style{
+    background-color: aqua;
+    padding: 25px;
+}
+p {
+    font-weight: 600;
+    font-size: 3em;
+}
+body {
+    font-size: 16px;
+}
+#item1{
+    background-color: yellow;
+    padding: 5px;
+}
+#item2{
+    background-color: red;
+    padding: 5px;
+}
+#item3{
+    background-color: brown;
+    padding: 5px;
+}
