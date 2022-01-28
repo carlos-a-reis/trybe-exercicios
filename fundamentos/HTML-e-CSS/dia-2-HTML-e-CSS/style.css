@@ -8,12 +8,13 @@ ul{
     font-style: italic;
     font-weight: bold;
     line-height: 30px;
-    text-align: center;
+    text-align: left;
     text-decoration: overline;
+    padding: 3%;
 }
 .quest-style{
     background-color: aqua;
-    padding: 25px;
+    padding: 3%;
 }
 p {
     font-weight: 600;
@@ -24,13 +25,14 @@ body {
 }
 #item1{
     background-color: yellow;
-    padding: 5px;
+    padding: 3%;
 }
 #item2{
     background-color: red;
-    padding: 5px;
+    padding: 3%;
 }
 #item3{
     background-color: brown;
-    padding: 5px;
+    padding: 3%;
+
 }
