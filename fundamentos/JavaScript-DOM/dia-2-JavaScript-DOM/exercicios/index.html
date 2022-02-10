@@ -60,7 +60,7 @@
       //1
       let corpo = document.getElementsByTagName('body');
       let titulo = document.createElement('h1');
-      titulo.id = 'titulo';
+      titulo.className = 'title';
       titulo.innerText = 'Exercício 5.2 - JavaScript DOM';
       corpo[0].appendChild(titulo);
       console.log(corpo);
@@ -106,6 +106,31 @@
           itens.innerText = item;
           lista.appendChild(itens);
       }
+
+      //9
+      let subtitulo1 = document.createElement('h3');
+      let subtitulo2 = document.createElement('h3');
+      let subtitulo3 = document.createElement('h3');
+      principal.appendChild(subtitulo1);
+      principal.appendChild(subtitulo2);
+      principal.appendChild(subtitulo3);
+      subtitulo1.className = 'description';
+      subtitulo2.className = 'description';
+      subtitulo3.className = 'description';
+
+      //3
+      document.getElementsByClassName('left-content')[0].remove();
+
+      //4
+      document.querySelector('.right-content').style.marginRight = "auto";
+
+      //5
+      document.querySelector('.center-content').parentElement.style.backgroundColor = 'green';
+
+      //6
+      let removiveis = document.getElementsByTagName('li');
+      removiveis[removiveis.length - 1].remove();
+      removiveis[removiveis.length - 1].remove();
     </script>
   </body>
 </html>
