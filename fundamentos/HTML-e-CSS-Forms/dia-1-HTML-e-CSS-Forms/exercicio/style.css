@@ -1,0 +1,17 @@
+#cerca{
+    border-width: 4px;
+    border-style: solid;
+    border-color: black;
+    padding: 25px;
+    width: 700px;
+}
+
+#input-resposta{
+    resize: none;
+}
+
+#botao{
+    font-size: 20px;
+    width: 100px;
+    height: 50px;
+}
