@@ -1,8 +1,10 @@
-const sum = require("./sum");
+const {sum, myRemove} = require("./sum");
+
+//requisito 1
 
 describe("Primeiro requisito", () => {
  
-    it('Verifica se a função existe', () => {
+    it('Verifica se a função sum existe', () => {
         expect(typeof sum).toBe("function");
     });
 
@@ -23,3 +25,26 @@ describe("Primeiro requisito", () => {
     })
 });
 
+//requisito 2
+
+describe("Segundo requisito", () => {
+
+    it('Verifica se a função myRemove existe', () => {
+        expect(typeof myRemove).toBe("function");
+    })
+
+    it('Verifica se os parametros "[1, 2, 3, 4]" e "3" retorna o array "[1, 2, 4]"', () => {
+        const arrayResultado = [1, 2, 4];
+        expect(myRemove([1, 2, 3, 4], 3)).toEqual(arrayResultado);
+    })
+
+    it('Verifica se os parametros "[1, 2, 3, 4]" e "3" não retorna o array "[1, 2, 3, 4]"', () => {
+        const arrayResultado = [1, 2, 3, 4];
+        expect(myRemove([1, 2, 3, 4], 3)).not.toEqual(arrayResultado);
+    })
+
+    it('Verifica se os parametros "[1, 2, 3, 4]" e "5" retorna o array "[1, 2, 3, 4]"', () => {
+        const arrayResultado = [1, 2, 3, 4];
+        expect(myRemove([1, 2, 3, 4], 5)).toEqual(arrayResultado);
+    })
+});
