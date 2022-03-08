@@ -83,7 +83,23 @@ function techList(tech, name) {
      })
    }
    return arrayTech;
-   }
-   
+}
 
-module.exports = {sum, myRemove, myFizzBuzz, encode, decode, techList};
+//requisito 6
+
+function hydrate(bebidas) {
+    let resultado = bebidas.split(" ");
+    let soma = 0;
+    let coposDeAgua;
+    for (let cont = 0; cont < resultado.length; cont += 1){
+      if(parseFloat(resultado[cont]) >= 1 || parseFloat(resultado[cont]) <= 9){
+        soma += parseFloat(resultado[cont]);
+      }
+    }
+
+    soma === 1 ? coposDeAgua = soma + " copo de água" : coposDeAgua = soma + " copos de água";
+    
+    return coposDeAgua;
+}
+
+module.exports = {sum, myRemove, myFizzBuzz, encode, decode, techList, hydrate};
