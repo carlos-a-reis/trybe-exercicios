@@ -1,4 +1,4 @@
-const {sum, myRemove, myFizzBuzz} = require("./sum");
+const {sum, myRemove, myFizzBuzz, encode, decode} = require("./sum");
 
 //requisito 1
 
@@ -71,5 +71,35 @@ describe("Terceiro requisito", () => {
 
     it('Verifica se o parametro "2" retorna false', () => {
         expect(myFizzBuzz('2')).toBe(false);
+    });
+});
+
+//requisito 4
+
+describe("Quarto requisito", () => {
+
+    it('Verifica se encode é uma função', () => {
+        expect(typeof encode).toBe('function');
+    });
+
+    it('Verifica se decode é uma função', () => {
+        expect(typeof decode).toBe('function');
+    });
+
+    it('Verifica se encode coverte a, e, i, o, u em 1, 2, 3, 4, 5', () => {
+        expect(encode('a, e, i, o, u')).toBe('1, 2, 3, 4, 5');
+    });
+
+    it('Verifica se decode coverte 1, 2, 3, 4, 5 em a, e, i, o, u', () => {
+        expect(decode('1, 2, 3, 4, 5')).toBe('a, e, i, o, u');
+    });
+
+    it('Verifica se encode não coverte b, c, d, f, g, h, j, k, l, m, n, p, q, r, s, t, v, x, w, y, z', () => {
+        expect(encode('b, c, d, f, g, h, j, k, l, m, n, p, q, r, s, t, v, x, w, y, z')).toBe('b, c, d, f, g, h, j, k, l, m, n, p, q, r, s, t, v, x, w, y, z');
+    });
+
+    it('Verifica se a string retornada tem o mesmo numero de caracteres da string passada', () => {
+        const stringTest = 'abacaxi';
+        expect(stringTest.length).toBe(encode(stringTest).length);
     });
 });
