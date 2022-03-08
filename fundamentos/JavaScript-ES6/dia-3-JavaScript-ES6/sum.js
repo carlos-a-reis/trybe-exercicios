@@ -61,6 +61,29 @@ function decode(fraseDecodificada) {
       }
     }
     return decodificada;
-  }
+}
 
-module.exports = {sum, myRemove, myFizzBuzz, encode, decode};
+//requisito 5
+
+function techList(tech, name) {
+    let arrayResultante = [];
+    let arrayTech = [];
+    let vazio = 'Vazio!';
+     
+   if (tech.length === 0){ 
+     return vazio; 
+   }
+     
+   arrayResultante = tech.sort();
+    
+   for (let cont = 0; cont < tech.length; cont += 1){
+     arrayTech.push({
+       tech: tech[cont],
+       name: name,
+     })
+   }
+   return arrayTech;
+   }
+   
+
+module.exports = {sum, myRemove, myFizzBuzz, encode, decode, techList};
