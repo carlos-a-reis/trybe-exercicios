@@ -1,4 +1,4 @@
-const {sum, myRemove, myFizzBuzz, encode, decode, techList, hydrate} = require("./sum");
+const {sum, myRemove, myFizzBuzz, encode, decode, techList, hydrate, searchEmployee} = require("./sum");
 
 //requisito 1
 
@@ -106,7 +106,7 @@ describe("Quarto requisito", () => {
 
 //requisito 5
 
-describe('Testa a função techList', () => {
+describe('Quinto requisito', () => {
     it('Testa se a função techList é definida', () => {
       expect(techList).toBeDefined();
     });
@@ -144,7 +144,7 @@ describe('Testa a função techList', () => {
 
   //requisito 6
 
-  describe('Testa a função hydrate', () => {
+  describe('Sexto requisito', () => {
     it('Testa se a função hydrate é definida', () => {
       expect(hydrate).toBeDefined();
     });
@@ -157,5 +157,42 @@ describe('Testa a função techList', () => {
       expect(hydrate('2 shots de tequila, 2 cervejas e 1 corote')).toBe('5 copos de água');
       expect(hydrate('1 copo de catuaba, 1 cervejas e 1 copo de vinho')).toBe('3 copos de água');
       expect(hydrate('4 caipirinhas e 2 cervejas')).toBe('6 copos de água');
+    });
+  });
+
+  //requisito bônus
+
+  describe("Requisito bônus", () => {
+
+    it('Verifica se a função searchEmployee existe', () => {
+        expect(typeof searchEmployee).toBe('function');
+    });
+
+    it('Verifica se passando a id 8579-6 e a info firstName o retorno é "Ana"', () => {
+        expect(searchEmployee('8579-6', 'firstName')).toBe('Ana');
+    });
+
+    it('Verifica se passando a id 4456-4 e a info lastName o retorno é "Zuckerberg"', () => {
+        expect(searchEmployee('4456-4', 'lastName')).toBe('Zuckerberg');
+    });
+
+    it('Verifica se passando a id 4678-2 e a info specialities o retorno é ["Backend"]', () => {
+        expect(searchEmployee('4678-2', 'specialities')).toEqual(['Backend']);
+    });
+
+    it('Verifica se passando um id que não consta no quadro de funcionarios é retornado um erro', () => {
+        expect(() => {searchEmployee('4448-2', 'specialities')}).toThrow()
+    });
+
+    it('Verifica se passando um id que não consta no quadro de funcionarios o erro retornado é "ID não identificada"', () => {
+        expect(() => {searchEmployee('4448-2', 'specialities')}).toThrowError('ID não identificada');
+    });
+
+    it('Verifica se passando uma info que não existe é retornado um erro', () => {
+        expect(() => {searchEmployee('8579-6', 'age')}).toThrow()
+    });
+
+    it('Verifica se passando uma info que não existe o erro retornado é "Informação indisponível"', () => {
+        expect(() => {searchEmployee('8579-6', 'age')}).toThrowError('Informação indisponível');
     });
   });
