@@ -1,5 +1,5 @@
 // requisito 1
-const employeeCreator = (name) => {
+/*const employeeCreator = (name) => {
     const email = name.replaceAll(' ', '_').toLowerCase();
     
     const employee = {
@@ -36,3 +36,28 @@ const sorteio = (aposta, callback) => {
 }
 
 console.log(sorteio(1, verificaGanhador));
+*/
+// requisito 3
+const RIGHT_ANSWERS = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
+const STUDENT_ANSWERS = ['C', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
+
+const correcao = (gabarito, respostas) => {
+    let pontos = 0;
+    for (let index = 0; index < gabarito.length; index += 1) {
+        if (respostas[index] === gabarito[index]) {
+            pontos += 1;
+        } else if (respostas[index] === 'N.A'){
+            
+        } else {
+            pontos -= 0.5;
+        }
+    }
+    return pontos;
+};
+
+const prova = (gabarito, respostas, callback) => {
+    const nota = callback(gabarito, respostas);
+    return nota;
+};
+
+console.log(prova(RIGHT_ANSWERS, STUDENT_ANSWERS, correcao));
