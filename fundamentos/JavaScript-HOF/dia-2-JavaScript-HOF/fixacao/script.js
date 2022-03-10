@@ -38,14 +38,14 @@ const musicas = [
     { id: '31031685', title: 'Partita in C moll BWV 997' },
     { id: '31031686', title: 'Toccata and Fugue, BWV 565' },
     { id: '31031687', title: 'Chaconne, Partita No. 2 BWV 1004' },
-  ]
+]
   
-  function findMusic(id) {
+function findMusic(id) {
     const result = musicas.find((musica) => musica.id === id);
     return result.title;
-  }
+}
   
-  console.log(findMusic('31031685'))
+console.log(findMusic('31031685'))
 
 // parte 3
 // 1
@@ -65,11 +65,30 @@ const people = [
     { name: 'Ana', age: 23 },
     { name: 'Cláudia', age: 20 },
     { name: 'Bruna', age: 19 },
-  ];
+];
   
   const verifyAges = (arr, minimumAge) => {
     const result = arr.every((nome) => nome.age >= 18);
     return result
-  }
+}
   
-  console.log(verifyAges(people, 18));
+console.log(verifyAges(people, 18));
+
+// parte 4
+// 1
+const peopleAge = [
+    { name: 'Mateus', age: 18 },
+    { name: 'José', age: 16 },
+    { name: 'Ana', age: 23 },
+    { name: 'Cláudia', age: 20 },
+    { name: 'Bruna', age: 19 },
+];
+  
+peopleAge.sort((peopleA, peopleB) => peopleA.age - peopleB.age);
+  
+console.log(peopleAge);
+
+// 2
+peopleAge.sort((peopleA, peopleB) => peopleB.age - peopleA.age);
+  
+console.log(peopleAge);
