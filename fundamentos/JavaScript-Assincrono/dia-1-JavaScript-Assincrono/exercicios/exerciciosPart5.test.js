@@ -9,5 +9,5 @@ it('uppercase "test" to equal "TEST"', (done) => {
         done(error);
       }
     });
-  });
+});
   
