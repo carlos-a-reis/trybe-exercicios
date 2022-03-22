@@ -1,3 +1,4 @@
+// exercicio 6
 const messageDelay = () => Math.floor(Math.random() * 5000);
 
 const getMarsTemperature = () => {
