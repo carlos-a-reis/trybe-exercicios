@@ -20,7 +20,6 @@ body {
 
 .pokemon-info {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
@@ -28,17 +27,24 @@ body {
   border: 3px solid #42C2FF;
   border-radius: 20px;
   background-color: #B8FFF9;
-  margin: 15px;
+  margin: 25px;
   padding: 10px;
-  min-width: 280px;
-  width: 29%;
+  min-width: 350px;
   height: 150px;
+  flex-grow: 1;
 }
 
 .pokemon {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  margin: 0.7em;
+  width: 180px;
+}
+
+.pokemon span{
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 a {
@@ -50,4 +56,11 @@ a {
   display: flex;
   object-fit: contain;
   height: 150px;
+}
+
+@media screen and (min-width: 1700px) {
+  .pokemon-info {
+    min-width: 380px;
+    max-width: 800px;
+  }
 }
